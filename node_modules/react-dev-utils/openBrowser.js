@@ -88,7 +88,7 @@ function startBrowserProcess(browser, url) {
   // Another special case: on OS X, check if BROWSER has been set to "open".
   // In this case, instead of passing `open` to `opn` (which won't work),
   // just ignore it (thus ensuring the intended behavior, i.e. opening the system browser):
-  // https://github.com/facebookincubator/create-react-app/pull/1690#issuecomment-283518768
+  // https://github.com/facebook/create-react-app/pull/1690#issuecomment-283518768
   if (process.platform === 'darwin' && browser === 'open') {
     browser = undefined;
   }
@@ -96,7 +96,7 @@ function startBrowserProcess(browser, url) {
   // Fallback to opn
   // (It will always open new tab)
   try {
-    var options = { app: browser };
+    var options = { app: browser, wait: false };
     opn(url, options).catch(() => {}); // Prevent `unhandledRejection` error.
     return true;
   } catch (err) {
@@ -105,7 +105,7 @@ function startBrowserProcess(browser, url) {
 }
 
 /**
- * Reads the BROWSER evironment variable and decides what to do with it. Returns
+ * Reads the BROWSER environment variable and decides what to do with it. Returns
  * true if it opened a browser or ran a node.js script, otherwise false.
  */
 function openBrowser(url) {
