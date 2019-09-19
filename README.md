@@ -3,6 +3,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 Below you will find some information on how to perform common tasks.<br>
 You can find the most recent version of this guide [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
 
+Be sure to update the below in src/util/Yelp.js before running in DEV or Production:
+//Be sure to REMOVE the below befor pushing to git hub public
+const accessToken = '';
+ 
 ## Table of Contents
 
 - [Updating to New Releases](#updating-to-new-releases)

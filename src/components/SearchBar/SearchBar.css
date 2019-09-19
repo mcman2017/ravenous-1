@@ -8,6 +8,10 @@
   height: 25rem;
 }
 
+h3 {
+  color: white;
+}
+
 .SearchBar-sort-options ul {
   display: flex;
   justify-content: center;
